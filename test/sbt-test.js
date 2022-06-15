@@ -20,6 +20,9 @@ describe("SBT", function () {
     await expect(sbt.mint(accounts[0].address, 0)).to.be.revertedWith(
       "You already own this token"
     );
+    await expect(sbt.mint(accounts[0].address, 1)).to.be.revertedWith(
+      "You already own this token"
+    );
   });
   it("Mint: Should not be able to transfer", async function () {
     await expect(
